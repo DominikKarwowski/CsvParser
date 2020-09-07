@@ -19,6 +19,8 @@ namespace DjK.Utilities
         /// <summary>
         /// Separators used in csv file. Cannot be empty.
         /// </summary>
+        /// <exception cref="ArgumentNullException">Thrown on attempt to assign null reference.</exception>
+        /// <exception cref="ArgumentException">Thrown on attempt to assign an empty array.</exception>
         public char[] Separators
         {
             get { return _Separators; }
