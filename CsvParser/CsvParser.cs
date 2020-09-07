@@ -63,11 +63,12 @@ namespace DjK.Utilities
 
         /// <summary>
         /// Converts csv line to data object of type T based on provided mapping function.
-        /// Throws IOException if the specified source file does not exist.
+        /// Thrown if the file specified in SourceFile property does not exist.
         /// </summary>
         /// <typeparam name="T">Data object to be created from the data in csv file.</typeparam>
         /// <param name="lineToObjectMapper">Function mapping csv line to a specified object.</param>
         /// <returns>List of data objects created from csv data.</returns>
+        /// <exception cref="FileNotFoundException">Thrown if the file specified in the SourceFile property cannot be found.</exception>
         public List<T> LinesToList<T>(Func<string[], T> lineToObjectMapper)
         {
             List<T> retrievedData = new List<T>() { };
@@ -87,10 +88,12 @@ namespace DjK.Utilities
             }
             else
             {
-                throw new IOException("Input file not found.");
+                throw new FileNotFoundException($"Input file specified by the {nameof(SourceFile)} property not found.", SourceFile);
             }
-
+            
             return retrievedData;
         }
+
+        
     }
 }

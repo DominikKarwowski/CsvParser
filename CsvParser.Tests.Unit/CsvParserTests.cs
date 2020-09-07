@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DjK.Utilities;
+using System.IO;
 
 namespace Utilities.Tests.Unit
 {
@@ -46,13 +45,13 @@ namespace Utilities.Tests.Unit
             var csvParserSut = new CsvParser(DUMMY_FILE_PATH);
 
             // Act
-            void codeToTest() => csvParserSut.Separators = null;
+            void CodeToTest() => csvParserSut.Separators = null;
 
             // Arrange
             Assert.Throws(
                 Is.TypeOf<ArgumentNullException>()
                 .And.Property("ParamName").EqualTo(nameof(csvParserSut.Separators)),
-                codeToTest);
+                CodeToTest);
         }
 
         [Test]
@@ -63,13 +62,30 @@ namespace Utilities.Tests.Unit
             var csvParserSut = new CsvParser(DUMMY_FILE_PATH);
 
             // Act
-            void codeToTest() => csvParserSut.Separators = new char[] { };
+            void CodeToTest() => csvParserSut.Separators = new char[] { };
 
             // Arrange
             Assert.Throws(
                 Is.TypeOf<ArgumentException>().
                 And.Property("ParamName").EqualTo(nameof(csvParserSut.Separators)),
-                codeToTest);
+                CodeToTest);
+        }
+
+        [Test]
+        public void LinesToListOfT_IfSourceFileCannotBeFound_ThrowsFileNotFoundException()
+        {
+            // Arrange
+            const string DUMMY_FILE_PATH = @"dummyPath\dummyFile.csv";
+            var csvParserSut = new CsvParser(DUMMY_FILE_PATH);
+
+            // Act
+            void CodeToTest() => csvParserSut.LinesToList(l => l);
+
+            // Assert
+            Assert.Throws(
+                Is.TypeOf<FileNotFoundException>()
+                .And.Property("FileName").EqualTo(csvParserSut.SourceFile),
+                CodeToTest);
         }
     }
 }
