@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <Authors>Dominik Karwowski</Authors>
+    <Description>CSV files parser</Description>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\karwo\Documents\DJK\Kodowanie\Projects\Utilities\CsvParser\CsvParser\CsvParser.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

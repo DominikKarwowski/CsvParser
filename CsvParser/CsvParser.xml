@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CsvParser</name>
+    </assembly>
+    <members>
+        <member name="T:DjK.Utilities.CsvParser">
+            <summary>
+            Provides a functionality to parse csv file and convert text data to specified data object.
+            </summary>
+        </member>
+        <member name="P:DjK.Utilities.CsvParser.SourceFile">
+            <summary>
+            Path to csv file.
+            </summary>
+        </member>
+        <member name="P:DjK.Utilities.CsvParser.Separators">
+            <summary>
+            Separators used in csv file. Cannot be empty.
+            </summary>
+        </member>
+        <member name="M:DjK.Utilities.CsvParser.#ctor(System.String)">
+            <summary>
+            Specify path to csv file. Semicolon (;) will be set as a default separator.
+            </summary>
+            <param name="file">Path to csv file.</param>
+        </member>
+        <member name="M:DjK.Utilities.CsvParser.#ctor(System.String,System.Char)">
+            <summary>
+            Specify path to csv file and a csv separator.
+            </summary>
+            <param name="file"></param>
+            <param name="separator"></param>
+        </member>
+        <member name="M:DjK.Utilities.CsvParser.#ctor(System.String,System.Char[])">
+            <summary>
+            Specify path to csv file and multiple csv separators.
+            </summary>
+            <param name="file">Path to csv file.</param>
+            <param name="separators">Separators used in csv file.</param>
+        </member>
+        <member name="M:DjK.Utilities.CsvParser.LinesToList``1(System.Func{System.String[],``0})">
+            <summary>
+            Converts csv line to data object of type T based on provided mapping function.
+            Throws IOException if the specified source file does not exist.
+            </summary>
+            <typeparam name="T">Data object to be created from the data in csv file.</typeparam>
+            <param name="lineToObjectMapper">Function mapping csv line to a specified object.</param>
+            <returns>List of data objects created from csv data.</returns>
+        </member>
+    </members>
+</doc>
