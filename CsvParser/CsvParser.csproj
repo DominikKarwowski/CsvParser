@@ -21,4 +21,14 @@
     <DocumentationFile>C:\Users\karwo\Documents\DJK\Kodowanie\Projects\Utilities\CsvParser\CsvParser\CsvParser.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="CsvParser.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CsvParser.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

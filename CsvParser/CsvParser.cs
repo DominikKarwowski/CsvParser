@@ -65,7 +65,7 @@ namespace DjK.Utilities
 
         /// <summary>
         /// Converts csv line to data object of type T based on provided mapping function.
-        /// Thrown if the file specified in SourceFile property does not exist.
+        /// FileNotFoundException is thrown when the file specified in SourceFile property does not exist.
         /// </summary>
         /// <typeparam name="T">Data object to be created from the data in csv file.</typeparam>
         /// <param name="lineToObjectMapper">Function mapping csv line to a specified object.</param>
