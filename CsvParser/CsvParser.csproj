@@ -2,13 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.1</Version>
+    <Version>1.0.0</Version>
     <Authors>Dominik Karwowski</Authors>
     <Description>CSV files parser</Description>
     <SignAssembly>false</SignAssembly>
+    <RootNamespace>DjK.Utilities</RootNamespace>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <Company>DjK</Company>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\karwo\Documents\DJK\Kodowanie\Projects\Utilities\CsvParser\CsvParser\CsvParser.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Users\karwo\Documents\DJK\Kodowanie\Projects\Utilities\CsvParser\CsvParser\CsvParser.xml</DocumentationFile>
   </PropertyGroup>
 
